@@ -15,6 +15,9 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 
 app.use(express.static(publicDirectoryPath))
 
+//socket.emit used for single person
+//io.emit send to everyone in connection
+//socket.broadcast send to everyone but the user
 io.on('connection', (socket) => {
     console.log('New WebSocket connection')
 
