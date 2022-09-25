@@ -22,6 +22,8 @@ io.on('connection', (socket) => {
     console.log('New WebSocket connection')
 
     socket.on('join', (options, callback) => {
+        console.log(options)
+        console.log(callback)
         const { error, user } = addUser({ id: socket.id, ...options })
 
         if (error) {
